@@ -26,8 +26,5 @@ const endpoints: EndpointDeclaration[] = [
 
 export const castApi = new Api({
     baseUrl: API_BASE_URL as string,
-    headers: {
-        authorization: localStorage.getItem('token')
-    },
     endpoints: endpoints
 })

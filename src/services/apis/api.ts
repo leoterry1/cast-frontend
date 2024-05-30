@@ -10,6 +10,7 @@ export interface EndpointData {
   data?: {};
   id?: string | number;
   params?: {};
+  headers?: {}
 }
 
 export interface RequestData {
@@ -39,11 +40,11 @@ const request = async ({ method, url, id, data, params, baseUrl, headers }: Requ
 };
 
 export class Api {
-  [key: string]: (data: EndpointData) => Promise<AxiosResponse>;;
+  [key: string]: (data: EndpointData) => Promise<AxiosResponse>;
 
-  constructor({ baseUrl, headers = {}, endpoints }: ApiConstructor) {
+  constructor({ baseUrl, endpoints }: ApiConstructor) {
     endpoints.map((ep: EndpointDeclaration) => {
-      this[ep.name] = async ({ id, data, params }: EndpointData) => {
+      this[ep.name] = async ({ id, data, params, headers = {} }: EndpointData) => {
         return await request({ 
           method: ep.method,
           url: ep.url,
