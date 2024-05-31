@@ -7,7 +7,8 @@ const Input = ({
   disabled = false,
   label,
   formOptions,
-  error
+  error,
+  className = ''
 }: {
   value?: string;
   type: string;
@@ -15,11 +16,12 @@ const Input = ({
   label: string;
   formOptions: {};
   error?: string;
+  className?: string;
 }) => {
   const [isFocused, setIsFocused] = useState(false);
   
   return (
-    <div className="relative w-full font-castForm">
+    <div className={clsx("relative w-full font-castForm", className)}>
       <input
         type={type}
         value={value}

@@ -12,11 +12,12 @@ const schema = yup
       .required("El email es  requerido")
       .email("Debe ser un email válido"),
     rid: yup.string().required("Este campo es requerido"),
+    tag: yup.string().required("Este campo es requerido")
   })
   .required();
 
 const FirstStep = ({
-  onSubmit
+  onSubmit,
 }: {
   onSubmit: (data: FirstStepData) => Promise<void>;
 }) => {
@@ -36,12 +37,22 @@ const FirstStep = ({
         label="Correo electrónico"
         type="text"
       />
-      <Input
-        error={errors.rid?.message}
-        formOptions={register("rid")}
-        label="Riot ID"
-        type="text"
-      />
+      <div className="flex">
+        <Input
+          error={errors.rid?.message}
+          formOptions={register("rid")}
+          label="Riot ID"
+          type="text"
+          className="mr-2"
+        />
+        <Input
+          error={errors.rid?.message}
+          formOptions={register("tag")}
+          label="TAG"
+          type="text"
+          className="ml-2"
+        />
+      </div>
       <Button
         onClick={handleSubmit(onSubmit)}
         label="SIGUIENTE"

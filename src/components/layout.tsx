@@ -32,7 +32,7 @@ export const Layout = () => {
   const toggleMenu = () => setIsMenuVisible(!isMenuVisible);
   
   return (
-    <div className="w-full font-castFont h-14 bg-castNavbar sticky flex items-center">
+    <div className="z-50 w-full font-castFont h-14 bg-castNavbar sticky flex items-center">
       <img width={120} src={logo} className="m-8" />
       <ul className="flex items-center ml-6">
         {SECTIONS.map((section, key) => {

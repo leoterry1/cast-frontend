@@ -12,6 +12,7 @@ import FirstStepData from "./components/firstStep";
 export interface FirstStepData {
     email: string;
     rid: string;
+    tag: string;
 }
 
 interface LastStep {
