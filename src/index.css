@@ -576,3 +576,18 @@ video {
   font-weight: 700;
   font-style: normal;
 }
+
+@layer components {
+  .underline-hover {
+    @apply relative inline-block;
+  }
+
+  .underline-hover::after {
+    content: "";
+    @apply absolute w-full h-1 bg-castPrimary bottom-0 left-0 transform scale-x-0 origin-bottom-right transition-transform duration-300 ease-out;
+  }
+
+  .underline-hover:hover::after {
+    @apply transform scale-x-100 origin-bottom-left;
+  }
+}

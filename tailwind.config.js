@@ -11,7 +11,8 @@ export default {
         castTitle: '#000000',
         castTitleDisabled: '#FFFFFF',
         castFormBg: '#FFFEFE',
-        castBorders: '#600C87'
+        castBorders: '#600C87',
+        castNavbar: '#333333'
       },
       fontFamily: {
         // CAST

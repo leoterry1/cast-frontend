@@ -3,7 +3,7 @@ import { FunctionComponent, PropsWithChildren } from "react";
 
 export interface RouteInterface {
     route: (...args: string[]) => string;
-    layout?: () => Promise<FunctionComponent>;
+    layout?: boolean;
     page?: () => Promise<FunctionComponent<PropsWithChildren>>;
     requiresAuth?: boolean;
     allowedRoles?: UserRole[];
