@@ -5,6 +5,7 @@ import {
 } from "react";
 import { RouteInterface } from "./route-interface";
 import { AuthGuard } from "../../components/auth-guard";
+import Layout from "../../components/layout";
 
 interface Props {
     route: RouteInterface;
@@ -34,6 +35,7 @@ export function ComponentLoader({ route }: Props) {
 
     if(Page) return (
         <AuthGuard route={route.route()}>
+            {route.layout && <Layout/>}
             <Page/>
         </AuthGuard>
     )
