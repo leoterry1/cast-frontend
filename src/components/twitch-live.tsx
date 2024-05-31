@@ -1,3 +1,5 @@
+import { HOST_DOMAIN } from "../../environment";
+
 const TwitchLive = () => {
   return (
     <div className="h-screen">
@@ -7,14 +9,14 @@ const TwitchLive = () => {
       <div className="h-full flex">
         <div className="relative overflow-hidden w-3/4 h-5/6 mr-2">
           <iframe
-            src="https://player.twitch.tv/?channel=nanu_0_&parent=localhost"
+            src={`https://player.twitch.tv/?channel=nanu_0_&parent=${HOST_DOMAIN}`}
             allowFullScreen
             className="w-full h-full"
           ></iframe>
         </div>
         <div className="relative overflow-hidden w-1/4 h-5/6">
           <iframe
-            src="https://www.twitch.tv/embed/nanu_0_/chat?parent=localhost"
+            src={`https://www.twitch.tv/embed/nanu_0_/chat?parent=${HOST_DOMAIN}`}
             className="w-full h-full"
           ></iframe>
         </div>
