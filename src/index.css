@@ -577,6 +577,10 @@ video {
   font-style: normal;
 }
 
+body {
+  background-color: #424242;
+}
+
 @layer components {
   .underline-hover {
     @apply relative inline-block;
